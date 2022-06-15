@@ -1,11 +1,11 @@
 import express from 'express';
 
-const Havit = express();
+const Haveit = express();
 const PORT = 3000;
 
 
-Havit.get('/api/v1/', (_,res) => {
-    res.send("Hello Welcome to Havit")
+Haveit.get('/api/v1/', (_,res) => {
+    res.send("Hello Welcome to Haveit")
 })
 
-Havit.listen(PORT, () => console.log(`Havit is listing at Port: ${PORT}`))
+Haveit.listen(PORT, () => console.log(`Haveit is listing at Port: ${PORT}`))
