@@ -33,7 +33,10 @@ const ProductSchema = new Schema({
 
     carouselImages: Array,
 
-    categoryId: String,
+    categoryId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'Category',
+    },
 
     isFavorite: {
         type: Boolean,

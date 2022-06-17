@@ -3,12 +3,14 @@ const { Schema } = mongoose;
 
 const CartSchema = new Schema({
     customerId: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: 'Customer',
         required: [true, 'You must provide a Customer ID'],
         trim: true,
     },
     productId: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: 'Product',
         required: [true, 'You must provide a Product ID'],
         trim: true,
     },

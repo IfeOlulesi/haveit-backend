@@ -27,7 +27,8 @@ const CustomerSchema = new Schema({
     },
 
     cartId: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: 'Cart',
         trim: true,
         unique: true,
     },
