@@ -8,6 +8,20 @@ category.route('/')
         let data = getAllCategory()
         res.json(data)
     })
+    .post((req, res) => {
+        res.send("This route is still in development 😎👨‍💻")
+    })
+
+category.route('/:id')
+    .get((req, res) => {
+        res.send("This route is still in development 😎👨‍💻")
+    })
+    .patch((req, res) => {
+        res.send("This route is still in development 😎👨‍💻")
+    })
+    .delete((req, res) => { 
+        res.send("This route is still in development 😎👨‍💻")
+    })
 
 
 export default category;
