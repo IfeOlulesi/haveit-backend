@@ -2,7 +2,7 @@ import express from 'express';
 import category from './routes/category.js';
 
 const Haveit = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3100;
 
 
 Haveit.get('/api/v1/', (_,res) => {
