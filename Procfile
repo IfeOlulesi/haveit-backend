@@ -1,1 +1,1 @@
-web: npm publish
+web: npm deploy
