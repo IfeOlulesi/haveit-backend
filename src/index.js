@@ -1,6 +1,5 @@
 import express from 'express';
 import { connectDB } from './config/dbconnection.js';
-// require("dotenv").config()
 
 const Haveit = express();
 const PORT = process.env.PORT || 3100;

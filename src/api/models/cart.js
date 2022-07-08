@@ -1,6 +1,18 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
+const semiProductSchema = new Schema({
+    id: {
+        type: mongoose.Types.ObjectId,
+        required: true
+    },
+
+    quantity: {
+        type: Number,
+        required: true
+    },
+})
+
 const CartSchema = new Schema({
     customerId: {
         type: mongoose.Types.ObjectId,
@@ -8,12 +20,9 @@ const CartSchema = new Schema({
         required: [true, 'You must provide a Customer ID'],
         trim: true,
     },
-    productId: {
-        type: mongoose.Types.ObjectId,
-        ref: 'Product',
-        required: [true, 'You must provide a Product ID'],
-        trim: true,
-    },
+
+    products: [semiProductSchema],
+
     totalCost: {
         type: Number,
         required: [true, 'You must provide a Price tag'],
