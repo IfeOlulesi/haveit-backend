@@ -17,7 +17,7 @@ category.get('/', control.get)
 
 category.post('/', control.post)
 
-category.patch('/:id', control.update)
+category.put('/:id', control.update)
 
 category.delete('/:id', control.delete)
 
