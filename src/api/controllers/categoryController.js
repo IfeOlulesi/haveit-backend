@@ -17,7 +17,14 @@ export default {
 
     async post(req, res) {
         try {
-            let category = await categoryModel.create(req.body)
+            let category = await categoryModel.exists({ name: req.body.name})
+            
+            if (category) {
+                console.log({message: `${req.body.name} already exist` })
+                res.status(500).json({message: `${req.body.name} already exist` })                
+            }
+
+            category = await categoryModel.create(req.body)
             category.save()
 
             res.status(200).json({ message: "Category Added", data: category })
