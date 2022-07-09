@@ -1,6 +1,13 @@
 import express from 'express';
-import category from './api/routes/category.js';
 import { connectDB } from './config/dbconnection.js';
+
+// Swagger
+import SwaggerUi from 'swagger-ui-express';
+import swaggerSpecs from './config/swagger.js'
+
+// Routes
+import category from './api/routes/category.js';
+
 
 const Haveit = express();
 const PORT = process.env.PORT || 3100;
@@ -18,6 +25,9 @@ Haveit.use(express.json());
 Haveit.use(express.urlencoded({ extended: true }));
 
 
+Haveit.get('/', (_, res) => { res.status(302).redirect('/api-doc') })
+
+Haveit.use('/api-doc', SwaggerUi.serve, SwaggerUi.setup(swaggerSpecs))
 Haveit.use('/category', category)
 
 Start()
