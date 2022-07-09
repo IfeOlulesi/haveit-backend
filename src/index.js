@@ -25,9 +25,10 @@ Haveit.use(express.json());
 Haveit.use(express.urlencoded({ extended: true }));
 
 
-Haveit.get('/', (_, res) => { res.status(302).redirect('/api-doc') })
+Haveit.get('/', (_, res) => { res.status(302).redirect('/api/v1/doc') })
+Haveit.get('/api/v1', (_, res) => { res.status(302).redirect('/api/v1/doc') })
 
-Haveit.use('/api-doc', SwaggerUi.serve, SwaggerUi.setup(swaggerSpecs))
-Haveit.use('/category', category)
+Haveit.use('/api/v1/doc', SwaggerUi.serve, SwaggerUi.setup(swaggerSpecs))
+Haveit.use('/api/v1/category', category)
 
 Start()
