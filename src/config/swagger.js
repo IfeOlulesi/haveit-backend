@@ -15,7 +15,7 @@ const options = {
             }
         ],
     },
-    apis: ["./api/routes/*.js"]
+    apis: ["../docs/*.js"]
 }
 
 export default swaggerJSDoc(options)
