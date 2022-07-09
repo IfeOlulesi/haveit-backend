@@ -1,0 +1,23 @@
+GET http://localhost:3100/category
+
+
+###
+POST http://localhost:3100/category HTTP/1.1
+content-type: application/json
+
+{
+    "name": "cars"
+}
+
+
+###
+PATCH http://localhost:3100/category/62c9431838ce3705b78ce7b6 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "test"
+}
+
+
+###
+DELETE http://localhost:3100/category/62c9431838ce3705b78ce7b6 HTTP/1.1

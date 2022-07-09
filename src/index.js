@@ -1,4 +1,5 @@
 import express from 'express';
+import category from './api/routes/category.js';
 import { connectDB } from './config/dbconnection.js';
 
 const Haveit = express();
@@ -12,5 +13,11 @@ const Start = async () => {
         console.log(error)        
     }
 }
+
+Haveit.use(express.json());
+Haveit.use(express.urlencoded({ extended: true }));
+
+
+Haveit.use('/category', category)
 
 Start()
