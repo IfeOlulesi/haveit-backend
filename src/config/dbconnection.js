@@ -7,5 +7,5 @@ const old = "mongodb://localhost/Haveit"
 export function connectDB() {
     return mongoose.connect(dbURI)
     	.then(() => console.log("connected to DB"))
-     	.catch((err) => console.log(errs))
+     	.catch((err) => console.log(err))
 }
