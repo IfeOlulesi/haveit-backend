@@ -1,1 +1,18 @@
 GET http://localhost:3100/api/v1/product
+
+###
+GET http://localhost:3100/api/v1/product/62cac8ad9d6a87df21292881
+
+###
+GET http://localhost:3100/api/v1/product?categoryId=62c9aa99bc073944435d7c82
+
+###
+POST http://localhost:3100/api/v1/product HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Apple Tie",
+    "shortDescription": "This is an over priced Tie",
+    "price": 100,
+    "categoryId": "62c9aa99bc073944435d7c82"
+}
