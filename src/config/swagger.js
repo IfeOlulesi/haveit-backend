@@ -7,7 +7,7 @@ const options = {
         info: {
             title: "Haveit API",
             version: "1.0.0",
-            description: "Engine powering the HaveIt eCommerce platform"
+            description: "Engine powering the Haveit eCommerce platform"
         },
         servers: [
             {
