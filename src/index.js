@@ -18,9 +18,11 @@ const Haveit = express();
 const PORT = process.env.PORT || 3100;
 dotenv.config()
 
+const DB_URI = process.env.MODE === 'production' ? process.env.MONGO_URI_PROD : process.env.MONGO_URI_DEV
+
 const Start = async () => {
     try {
-        await connectDB(process.env.MONGO_URI,process.env.MODE)
+        await connectDB(DB_URI)
         Haveit.listen(PORT, () => console.log(`Haveit is listing at Port: ${PORT}`))
     } catch (error) {
         console.log(error)        
