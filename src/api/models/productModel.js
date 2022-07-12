@@ -1,11 +1,17 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
+const imageSchema = new Schema({
+    url: String,
+    alt: String
+})
+
 const ProductSchema = new Schema({
     name: {
         type: String,
         required: [true, 'Name of Product is required'],
         trim: true,
+        unique: true,
         maxLength: [20, 'Product name must not be more than 20 characters'],
     },
 
@@ -21,10 +27,7 @@ const ProductSchema = new Schema({
         required: [true, 'Product price is required'],
     },
 
-    displayImage: {
-        type: String,
-        required: [true, 'Product Image is required'],
-    },
+    displayImage: imageSchema,
 
     arCompatibility: {
         type: Boolean,
@@ -36,6 +39,7 @@ const ProductSchema = new Schema({
     categoryId: {
         type: mongoose.Types.ObjectId,
         ref: 'Category',
+        required: [true, 'Category is required'],
     },
 
     isFavorite: {
@@ -44,7 +48,7 @@ const ProductSchema = new Schema({
     },
 
     quantityAvailable: {
-        type: Integer,
+        type: Number,
         default: 0,
     },
 
