@@ -1,11 +1,7 @@
 import mongoose from 'mongoose'
 
-const dbURI = "mongodb+srv://kodaas:52YASM6hWJR75HD@haveit.kidrqqv.mongodb.net/Haveit?retryWrites=true&w=majority"
-
-const old = "mongodb://localhost/Haveit"
-
-export function connectDB() {
-    return mongoose.connect(dbURI)
+export function connectDB(URI) {
+    return mongoose.connect(URI)
     	.then(() => console.log("connected to DB"))
      	.catch((err) => console.log(err))
 }
