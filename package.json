@@ -1,19 +1,18 @@
 {
   "name": "haveit-backend",
   "version": "1.0.0",
+  "description": " Engine powering the HaveIt eCommerce platform ",
   "type": "module",
-  "description": "Engine powering the HaveIt ecommerce platform",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "deploy": "node index.js"
+    "start": "nodemon ./src/index.js",
+    "deploy": "node ./src/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kodaas/haveit-backend.git"
   },
-  "author": "",
+  "author": "Fiyinfoluwa John Ajala",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kodaas/haveit-backend/issues"
@@ -22,9 +21,11 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.3.8"
+    "mongoose": "^6.4.4",
+    "swagger-jsdoc": "^6.2.1",
+    "swagger-ui-express": "^4.4.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.19"
   }
 }
