@@ -1,5 +1,6 @@
 import express from 'express';
-import control from '../controllers/productController.js'
+import control from '../controllers/productController.js';
+import Query from '../middleware/productQueries.js';
 
 const product = new express.Router()
 
@@ -23,16 +24,7 @@ product.post('/', control.post)
 
 product.put('/:id', control.update)
 
-product.delete('/', control.delete)
+product.delete('/:id', control.delete)
 
-function Query(req, res, next) {
-
-    if (req.query.categoryId) {
-        control.getbyCategoryId(req, res)
-    } else {
-        next()
-    }
-
-}
 
 export default product

@@ -11,7 +11,6 @@ const ProductSchema = new Schema({
         type: String,
         required: [true, 'Name of Product is required'],
         trim: true,
-        unique: true,
         maxLength: [20, 'Product name must not be more than 20 characters'],
     },
 
@@ -37,7 +36,7 @@ const ProductSchema = new Schema({
     carouselImages: Array,
 
     categoryId: {
-        type: mongoose.Types.ObjectId,
+        type: mongoose.SchemaTypes.ObjectId,
         ref: 'Category',
         required: [true, 'Category is required'],
     },
