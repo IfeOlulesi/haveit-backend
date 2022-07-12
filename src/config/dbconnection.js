@@ -1,11 +1,10 @@
 import mongoose from 'mongoose'
 
-const dbURI = "mongodb+srv://kodaas:52YASM6hWJR75HD@haveit.kidrqqv.mongodb.net/Haveit?retryWrites=true&w=majority"
+const local = "mongodb://localhost/Haveit"
 
-const old = "mongodb://localhost/Haveit"
-
-export function connectDB() {
-    return mongoose.connect(dbURI)
+export function connectDB(URI, mode) {
+	URI = mode === "production" ? URI : local
+    return mongoose.connect(URI)
     	.then(() => console.log("connected to DB"))
-     	.catch((err) => console.log(errs))
+     	.catch((err) => console.log(err))
 }
