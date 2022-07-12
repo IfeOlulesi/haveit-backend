@@ -18,7 +18,7 @@ const Haveit = express();
 const PORT = process.env.PORT || 3100;
 dotenv.config()
 
-const DB_URI = process.env.MODE === 'production' ? process.env.MONGO_URI_PROD : process.env.MONGO_URI_DEV
+const DB_URI = process.env.MONGO_URI;
 
 const Start = async () => {
     try {
