@@ -3,7 +3,7 @@ import { connectDB } from './config/dbconnection.js';
 import errorHandler from './api/middleware/errorHandler.js';
 import morgan from 'morgan';
 import dotenv from 'dotenv'
-// import cors from 'cors'
+import cors from 'cors'
 
 // Swagger
 import SwaggerUi from 'swagger-ui-express';
@@ -15,6 +15,8 @@ import product from './api/routes/product.js';
 
 
 const Haveit = express();
+Haveit.use(cors());
+
 const PORT = process.env.PORT || 3100;
 dotenv.config()
 
